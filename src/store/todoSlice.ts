@@ -23,7 +23,7 @@ export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
 
     return new Promise<Todo[]>((resolve) =>
         setTimeout(() => {
-            resolve([{ id: 1, task: 'Learn Reeeeeeedux', completed: false }]);
+            resolve([{ id: 1, task: 'Learn Reeeeeeeeeedux', completed: false }]);
         }, 1000)
     );
 });

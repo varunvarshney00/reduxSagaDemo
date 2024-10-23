@@ -2,16 +2,21 @@
 import React from 'react';
 import { SafeAreaView, Text, StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
-import { store } from './src/store/store'; // Import the store
+import { store, persistor } from './src/store/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import CounterComponent from './src/components/CounterComponent';
+import TodoComponent from './src/components/TodoComponent';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Redux with TypeScript Demo</Text>
-        <CounterComponent />
-      </SafeAreaView>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.title}>Complex Redux Example</Text>
+          <CounterComponent />
+          <TodoComponent />
+        </SafeAreaView>
+      </PersistGate>
     </Provider>
   );
 };

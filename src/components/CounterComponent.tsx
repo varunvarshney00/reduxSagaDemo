@@ -18,8 +18,7 @@ const CounterComponent = () => {
 
         <Button title="Increment" onPress={() => dispatch(increment())} />
         <Button title="Decrement" onPress={() => dispatch(decrement())} />
-
-
+            
       </View>
     </View>
   );
